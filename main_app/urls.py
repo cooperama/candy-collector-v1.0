@@ -7,6 +7,7 @@ urlpatterns = [
     path('about/', views.about, name='about'),
     # Candy
     path('candy/', views.candy_index, name='candy_index'),
+    path('candy/<int:candy_id>/', views.candy_detail, name='candy_detail'),
     # Seller(user)
     path('profile/', views.profile, name='profile'),
     path('accounts/signup/', views.signup, name='signup'),

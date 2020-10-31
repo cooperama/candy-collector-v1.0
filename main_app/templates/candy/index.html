@@ -5,18 +5,15 @@
 <h1>Sweetlies Candy</h1>
 
 {% for candy in all_candy %}
-  <div class="card">
-    <div class="card-content">
-      <span class="card-title">{{ candy.name }}</span>
-      <p>{{ candy.description }}</p>
-      <p>Ingredients: {{ candy.ingredients }}</p>
-      <p>Price per 100g: {{ candy.price }}</p>
-      {% if !candy.in_stock %}
-        <p>Out of Stock</p>
-      {% endif %}
+  <a href="{% url 'candy_detail' candy.id %}">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">{{ candy.name }}</span>
+        <p>Seller: {{ candy.seller }}</p>
+        <p>{{ candy.description }}</p>
+      </div>
     </div>
-  </div>
-
+  </a>
 {% endfor %}
 
 {% endblock %}

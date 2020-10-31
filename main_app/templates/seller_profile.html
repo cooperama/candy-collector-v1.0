@@ -1,8 +1,10 @@
 {% extends 'base.html' %}
-{% block title %}{% endblock %}
+{% block title %} - {{ store.name }}{% endblock %}
 {% block content %}
 
-<h1>My Store</h1>
+<h1>{{ store.name }}</h1>
+<p>{{ store.location }}</p>
+<p>{{ store.description }}</p>
 
 
 {% endblock  %}
