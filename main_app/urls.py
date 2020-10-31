@@ -1,4 +1,4 @@
-from django.urls import path, include
+from django.urls import path
 from . import views
 
 urlpatterns = [
@@ -8,5 +8,7 @@ urlpatterns = [
     # Candy
     path('candy/', views.candy_index, name='candy_index'),
     # Seller(user)
-    path('accounts/', include('django.contrib.auth.urls')),
+    path('profile/', views.profile, name='profile'),
+    path('accounts/signup/', views.signup, name='signup'),
+
 ]
