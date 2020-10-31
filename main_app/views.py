@@ -30,6 +30,7 @@ def candy_detail(request, candy_id):
     }
     return render(request, 'candy/detail.html', context)
 
+
 # ------------------- PROFILE/USER
 @login_required
 def profile(request):
@@ -39,7 +40,7 @@ def profile(request):
     context = {
         'store': store
     }
-    return render(request, 'seller_profile.html', context)
+    return render(request, 'stores/detail.html', context)
 
 
 def signup(request):
@@ -58,3 +59,30 @@ def signup(request):
         'error_message': error_message
     }
     return render(request, 'registration/signup.html', context)
+
+
+# ------------------- STORES
+def stores_index(request):
+    stores = Store.objects.all()
+    context = {
+        'stores': stores
+    }
+    return render(request, 'stores/index.html', context)
+
+
+@login_required
+def user_stores(request):
+    stores = Store.objects.filter(user=request.user)
+    context = {
+        'stores': stores
+    }
+    return render(request, 'stores/index.html', context)
+
+
+def store_detail(request, store_id):
+    store = Store.objects.get(id=store_id)
+    context = {
+        'store': store
+    }
+    return render(request, 'stores/detail.html', context)
+

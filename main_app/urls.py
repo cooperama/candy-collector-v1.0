@@ -11,5 +11,8 @@ urlpatterns = [
     # Seller(user)
     path('profile/', views.profile, name='profile'),
     path('accounts/signup/', views.signup, name='signup'),
-
+    # Stores
+    path('stores/', views.stores_index, name='stores_index'),
+    path('userstores/', views.user_stores, name='user_stores'),
+    path('stores/<int:store_id>/', views.store_detail, name='store_detail'),
 ]

@@ -19,8 +19,9 @@
           <li><a href="{% url 'home' %}">Home</a></li>
           <li><a href="{% url 'about' %}">About</a></li>
           <li><a href="{% url 'candy_index' %}">Shop</a></li>
+          <li><a href="{% url 'stores_index' %}">Our Stores</a></li>
           {% if user.is_authenticated %}
-          <li><a href="{% url 'profile' %}">My Store</a></li>
+          <li><a href="{% url 'user_stores' %}">My Stores</a></li>
           <li><a href="{% url 'logout' %}">Log Out</a></li>
           {% else %}
           <li><a href="{% url 'login' %}">Log In</a></li>
