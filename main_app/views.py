@@ -13,10 +13,10 @@ def about(request):
 
 # ------------------- CANDY
 def candy_index(request):
-    candy = Candy.objects.all()
+    all_candy = Candy.objects.all()
     context = {
-        'candy': candy
+        'all_candy': all_candy
     }
-    return render(request, 'candy/index.html', candy)
+    return render(request, 'candy/index.html', all_candy)
 
 
